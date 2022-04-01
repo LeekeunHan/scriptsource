@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="exam"></p>
+    <script>
+      // 요일 출력
+      var date = new Date();
+      // getday : 요일을 숫자로 돌려줌 ( 일요일 - 0 , 월요일 - 1....)
+      console.log(date.getDay());
+
+      let day = " ";
+
+      switch (date.getDay()) {
+        case 0:
+          day = "일요일";
+          break;
+        case 1:
+          day = "월요일";
+          break;
+        case 2:
+          day = "화요일";
+          break;
+        case 3:
+          day = "수요일";
+          break;
+        case 4:
+          day = "목요일";
+          break;
+        case 5:
+          day = "금요일";
+          break;
+        case 6:
+          day = "토요일";
+          break;
+
+        default:
+          break;
+      }
+      //.getElementById() :  id의 값으로 특정한 값을 가진 요소를 가져옵니다.
+      //.innerHTML : 특정 요소의 내용을 가져오거나, 특정 요소의 내용을 변경합니다.
+      document.getElementById("exam").innerHTML = "오늘은 " + day + " 입니다.";
+    </script>
+  </body>
+</html>
