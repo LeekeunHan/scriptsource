@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam alias m!
+      <br />
+      accusamus beatae, amet a eum deserunt tempore vero error vel perferendis
+      rem ipnostrum animi exercitationem Ipsum saepe porro adipisci modi ullam!
+    </p>
+    <script>
+      // flag 사용하기
+      // 원본 문자열 가져오기
+      let p1 = document.querySelector("p").innerHTML;
+      console.log("i 플래그");
+      console.log(p1.match(/ipsum/i));
+
+      console.log();
+
+      console.log("gi 플래그");
+      console.log(p1.match(/ipsum/gi));
+
+      console.log();
+
+      console.log("gm 플래그");
+      console.log(p1.match(/m!$/gm));
+    </script>
+  </body>
+</html>
