@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>인전관계선택자</h1>
+    <ul id="wrap">
+      <li>
+        리스트1
+        <ul>
+          <li id="list_1">리스트1-1</li>
+          <li>리스트1-2</li>
+        </ul>
+      </li>
+      <li>리스트2</li>
+      <li>리스트3</li>
+    </ul>
+    <ul id="wrap2">
+      <h1>인전관계선택자</h1>
+      <p>내용1</p>
+      <p class="txt">내용2</p>
+      <p>내용3</p>
+      <p>내용4</p>
+    </ul>
+
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script>
+      // parent : 부모 , 즉 ul를 말하는거임
+      $("#list_1")
+        .parent() //부모
+        .css("border", "2px solid red")
+        .css("background-color", "yellow");
+
+      // 내용1 선택하고 실선테두리 그리기
+      // 배경색 지정
+
+      // 방법 1
+      //   $("#wrap2 p:nth-child(2)")
+      //     .css("border", "2px solid blue")
+      //     .css("background-color", "#0ff");
+
+      // 방법 2
+      $("#wrap2 .txt")
+        .prev() //이전의
+        .css("border", "2px solid blue")
+        .css("background-color", "#0ff");
+
+      // 내용3,4 선택하고 점선테두리 그리기(배경색 내용1 다르게 지정)
+
+      // 방법 1
+      //   $("#wrap2 p:nth-child(4),p:last-child")
+      //     .css("border", "2px dashed yellow")
+      //     .css("background-color", "green");
+
+      // 방법 2
+      $("#wrap2 .txt")
+        .nextAll() //이후의 모든것
+        .css("border", "2px dashed yellow")
+        .css("background-color", "green");
+    </script>
+  </body>
+</html>
